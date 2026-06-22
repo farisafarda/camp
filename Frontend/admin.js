@@ -260,6 +260,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
+  const fetchData = async () => {
+  try {
   const [alatRes, pesananRes] = await Promise.all([
   fetch(`${API_URL}/api/alat`),
   fetch(`${API_URL}/api/pinjam`)
