@@ -9,10 +9,11 @@ const app = express();
 const PORT = Number(process.env.PORT) || 3000;
 
 const pool = mysql.createPool({
-  host: process.env.DB_HOST || 'localhost',
-  user: process.env.DB_USER || 'root',
-  password: process.env.DB_PASSWORD || '',
-  database: process.env.DB_NAME || 'db_camping',
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT,
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0
@@ -53,8 +54,10 @@ app.use((req, res, next) => {
 
 app.use(express.static(__dirname));
 
-app.get('/', (req, res) => {
-  res.sendFile(`${__dirname}/index.html`);
+app.get("/", (req,res)=>{
+    res.json({
+        message: "API berjalan"
+    });
 });
 
 app.post('/api/login', async (req, res) => {
