@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const API_URL = 'https://camp-u0as.onrender.com';
   const pesananBody = document.getElementById('pesanan-body');
   const alatBody = document.getElementById('alat-body');
   const historyBody = document.getElementById('history-body');
@@ -259,12 +260,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  const fetchData = async () => {
-    try {
-      const [alatRes, pesananRes] = await Promise.all([
-        fetch('/api/alat'),
-        fetch('/api/pinjam')
-      ]);
+  const [alatRes, pesananRes] = await Promise.all([
+  fetch(`${API_URL}/api/alat`),
+  fetch(`${API_URL}/api/pinjam`)
+  ]);
 
       const alatResult = await alatRes.json();
       const pesananResult = await pesananRes.json();
@@ -280,7 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     try {
-      const historyRes = await fetch('/api/history-peminjaman');
+      const historyRes = await fetch(`${API_URL}/api/history-peminjaman`);
       const historyResult = await historyRes.json();
 
       if (!historyRes.ok) {
@@ -304,9 +303,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const id = Number(button.dataset.id);
 
     try {
-      const response = await fetch(`/api/pinjam/${id}`, {
-        method: 'DELETE'
-      });
+      const response = await fetch(`${API_URL}/api/pinjam/${id}`, {
+  method: 'DELETE'
+});
 
       if (!response.ok) {
         throw new Error('Gagal menyelesaikan pesanan');
@@ -328,9 +327,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const id = Number(button.dataset.id);
 
     try {
-      const response = await fetch(`/api/alat/${id}`, {
-        method: 'PUT'
-      });
+      const response = await fetch(`${API_URL}/api/alat/${id}`, {
+  method: 'PUT'
+});
 
       if (!response.ok) {
         throw new Error('Gagal mengubah status alat');
@@ -380,7 +379,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     try {
-      const response = await fetch(`/api/history-peminjaman/${encodeURIComponent(id)}`, {
+      const response = await fetch(`${API_URL}/api/history-peminjaman/${encodeURIComponent(id)}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -442,9 +441,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       try {
-        const response = await fetch(`/api/history-peminjaman/${encodeURIComponent(id)}`, {
-          method: 'DELETE'
-        });
+        const response = await fetch(`${API_URL}/api/history-peminjaman/${encodeURIComponent(id)}`, {
+  method: 'DELETE'
+});
 
         const result = await readJsonResponse(response);
 
