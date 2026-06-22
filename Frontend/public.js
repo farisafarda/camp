@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const API_URL = 'https://camp-u0as.onrender.com/api';
   const alatList = document.getElementById('alat-list');
   const alatCheckboxes = document.getElementById('alat-checkboxes');
   const rentalForm = document.getElementById('rental-form');
@@ -192,24 +193,26 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     };
 
-  const fetchAlat = async () => {
-    try {
-      const response = await fetch('/api/alat');
-      const result = await response.json();
+const fetchAlat = async () => {
+  try {
+    const response = await fetch(`${API_URL}/alat`);
+    const result = await response.json();
 
-      if (!response.ok) {
-        throw new Error(result.message || 'Gagal memuat data alat');
-      }
-
-      renderAlat(result.data);
-      renderCheckboxes(result.data);
-      formMessage.textContent = '';
-      formMessage.style.color = '';
-    } catch (error) {
-      formMessage.textContent = error.message;
-      formMessage.style.color = '#dc2626';
+    if (!response.ok) {
+      throw new Error(result.message || 'Gagal memuat data alat');
     }
-  };
+
+    renderAlat(result.data);
+    renderCheckboxes(result.data);
+
+    formMessage.textContent = '';
+    formMessage.style.color = '';
+  } catch (error) {
+    formMessage.textContent = error.message;
+    formMessage.style.color = '#dc2626';
+    console.error(error);
+  }
+};
 
   rentalForm.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -246,7 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     try {
-      const response = await fetch('/api/pinjam', {
+      const response = await fetch(`${API_URL}/pinjam`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
