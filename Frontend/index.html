@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CampRent - Penyewaan Alat Camping</title>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">
+        <span class="brand-icon">⛺</span>
+        <span>CampRent</span>
+      </a>
+      <nav>
+        <a href="#features">Fitur</a>
+        <a href="#booking">Pesan</a>
+        <a href="login.html" class="nav-btn">Login Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">Penyewaan Alat Camping</p>
+          <h1>Petualanganmu dimulai dari alat yang tepat.</h1>
+          <p class="hero-desc">Sewa tenda, matras, kompor, dan perlengkapan camping dengan proses cepat, aman, dan terpercaya.</p>
+          <a href="#booking" class="cta-button">Sewa Sekarang</a>
+        </div>
+        <div class="hero-visual">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80" alt="Camping outdoor" />
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features-section">
+      <div class="container">
+        <div class="section-title">
+          <p class="eyebrow">Kenapa memilih kami</p>
+          <h2>Keunggulan layanan kami</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>Perlengkapan Lengkap</h3>
+            <p>Menawarkan berbagai kebutuhan camping untuk solo trip maupun rombongan.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Proses Cepat</h3>
+            <p>Pesanan bisa langsung diproses dengan sistem yang sederhana dan jelas.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Pengantaran Praktis</h3>
+            <p>Area pengiriman yang fleksibel dan mudah diakses untuk kebutuhan sehari-hari.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="booking" class="booking-section">
+      <div class="container booking-grid">
+        <section class="panel panel-wide">
+          <div class="panel-header">
+            <h2>Daftar Alat</h2>
+          </div>
+          <div id="alat-list" class="alat-grid"></div>
+        </section>
+
+        <section class="panel form-panel">
+          <div class="panel-header">
+            <h2>Form Peminjaman</h2>
+          </div>
+          <form id="rental-form">
+            <label for="nama">Nama</label>
+            <input id="nama" name="nama" type="text" placeholder="Masukkan nama Anda" />
+
+            <label for="nomor-wa">Nomor WhatsApp</label>
+            <input id="nomor-wa" name="nomor_wa" type="tel" placeholder="Contoh: 081234567890" />
+
+            <label for="alamat">Alamat Lengkap</label>
+            <input id="alamat" name="alamat" type="text" placeholder="Masukkan alamat lengkap Anda" />
+
+            <label for="tanggal-ambil">Tanggal Ambil</label>
+            <input id="tanggal-ambil" name="tanggal_ambil" type="date" />
+
+            <label for="tanggal-kembali">Tanggal Kembali</label>
+            <input id="tanggal-kembali" name="tanggal_kembali" type="date" />
+
+            <div>
+              <p class="checkbox-label">Pilih Beberapa Alat</p>
+              <div id="alat-checkboxes" class="checkbox-group"></div>
+            </div>
+
+            <label for="maps-link">Alamat / Koordinat Lokasi</label>
+            <input id="maps-link" name="mapsLink" type="text" placeholder="Contoh: -6.8048, 110.8440 atau alamat lengkap" />
+
+            <button type="submit">Ajukan Sewa</button>
+            <p id="form-message" class="message" role="alert"></p>
+          </form>
+        </section>
+
+        <section class="panel map-panel">
+          <div class="panel-header">
+            <h2>Peta Lokasi</h2>
+          </div>
+          <div id="map" class="map-box"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+  <script src="public.js"></script>
+</body>
+</html>

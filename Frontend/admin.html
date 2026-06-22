@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Admin - CampRent</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">Admin Panel</p>
+        <h1>Dashboard Penyewaan</h1>
+      </div>
+      <a class="logout-link" href="login.html">Logout</a>
+    </header>
+
+    <section class="content-grid admin-grid">
+      <section class="panel panel-wide">
+        <div class="panel-header">
+          <h2>Pesanan Masuk</h2>
+        </div>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Nama</th>
+                <th>Nomor WA</th>
+                <th>Tanggal Kembali</th>
+                <th>Daftar Alat</th>
+                <th>Maps</th>
+                <th>Status</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="pesanan-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel panel-wide">
+        <div class="panel-header">
+          <h2>Manajemen Alat</h2>
+        </div>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Nama Alat</th>
+                <th>Harga</th>
+                <th>Status</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="alat-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel panel-wide">
+        <div class="panel-header">
+          <h2>History Peminjaman</h2>
+        </div>
+        <form id="history-form" class="admin-form hidden">
+          <input id="history-id" name="id" type="hidden" />
+
+          <div class="admin-form-grid">
+            <div>
+              <label for="history-nama">Nama Penyewa</label>
+              <input id="history-nama" name="nama_penyewa" type="text" placeholder="Nama penyewa" />
+            </div>
+
+            <div>
+              <label for="history-wa">Nomor WA</label>
+              <input id="history-wa" name="nomor_wa" type="tel" placeholder="081234567890" />
+            </div>
+
+            <div>
+              <label for="history-tanggal-ambil">Tanggal Ambil</label>
+              <input id="history-tanggal-ambil" name="tanggal_ambil" type="date" />
+            </div>
+
+            <div>
+              <label for="history-tanggal-kembali">Tanggal Kembali</label>
+              <input id="history-tanggal-kembali" name="tanggal_kembali" type="date" />
+            </div>
+
+            <div>
+              <label for="history-alat">Daftar Alat</label>
+              <input id="history-alat" name="alat_dipinjam" type="text" placeholder="Tenda x1, Sleeping Bag x2" />
+            </div>
+
+            <div>
+              <label for="history-maps">Maps</label>
+              <input id="history-maps" name="link_maps" type="text" placeholder="Link maps atau koordinat" />
+            </div>
+
+            <div>
+              <label for="history-selesai">Tanggal Selesai</label>
+              <input id="history-selesai" name="tanggal_selesai" type="datetime-local" />
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button id="history-submit" type="submit">Update History</button>
+            <button id="history-reset" class="secondary-btn" type="button">Reset</button>
+          </div>
+          <p id="history-message" class="message" role="alert"></p>
+        </form>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Nama</th>
+                <th>Nomor WA</th>
+                <th>Tanggal Ambil</th>
+                <th>Tanggal Kembali</th>
+                <th>Daftar Alat</th>
+                <th>Maps</th>
+                <th>Tanggal Selesai</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="history-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>

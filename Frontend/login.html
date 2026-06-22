@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Admin - CampRent</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="login-page">
+  <main class="login-card">
+    <header class="login-header">
+      <p class="eyebrow">Admin Access</p>
+      <h1>Login Admin</h1>
+    </header>
+
+    <form id="login-form">
+      <label for="username">Username</label>
+      <input id="username" name="username" type="text" placeholder="Masukkan username" />
+
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" placeholder="Masukkan password" />
+
+      <button type="submit">Masuk</button>
+      <a class="nav-btn secondary-btn" href="index.html">Kembali ke Beranda</a>
+      <p id="login-message" class="message" role="alert"></p>
+    </form>
+  </main>
+
+  <script src="login.js"></script>
+</body>
+</html>
