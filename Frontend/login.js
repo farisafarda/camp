@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const API_URL = 'https://camp-u0as.onrender.com';
+
   const loginForm = document.getElementById('login-form');
   const usernameInput = document.getElementById('username');
   const passwordInput = document.getElementById('password');
@@ -21,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     try {
-      const response = await fetch('/api/login', {
+      const response = await fetch(`${API_URL}/api/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
