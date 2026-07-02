@@ -1,5 +1,5 @@
-SISTEM CAMP RENTAL
-Destripsi sitem: Aplikasi Penyewaan Perlengkapan Camping berbasis web ini adalah platform digital menggunakan Node.js, Express, dan MySQL yang mempermudah transaksi sewa-menyewa alat outdoor antara Admin dan Customer melalui landing page informatif yang terintegrasi langsung dengan katalog produk dinamis, fitur Google Maps, serta formulir pemesanan instan. Setiap pesanan yang dikirimkan pelanggan akan langsung masuk secara real-time ke halaman dashboard khusus admin untuk diproses, dipantau status transaksinya, diarsipkan ke dalam riwayat peminjaman, sekaligus otomatis memperbarui manajemen stok pada katalog produk.
+**SISTEM CAMP RENTAL**  
+**Destripsi sitem**: Aplikasi Penyewaan Perlengkapan Camping berbasis web ini adalah platform digital menggunakan Node.js, Express, dan MySQL yang mempermudah transaksi sewa-menyewa alat outdoor antara Admin dan Customer melalui landing page informatif yang terintegrasi langsung dengan katalog produk dinamis, fitur Google Maps, serta formulir pemesanan instan. Setiap pesanan yang dikirimkan pelanggan akan langsung masuk secara real-time ke halaman dashboard khusus admin untuk diproses, dipantau status transaksinya, diarsipkan ke dalam riwayat peminjaman, sekaligus otomatis memperbarui manajemen stok pada katalog produk.
 
 ### 👤 1. Mila Safira Maulida (202451216)
 **Bagian: Tampilan Utama Halaman Depan (*Front-End Landing Page*)**
